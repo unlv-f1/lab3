@@ -19,6 +19,24 @@ the definition of messages. Note for messages that are not installed
 by default by the distro we use in our container, you'll have to first
 install it for this to work.
 
+This assignment will begin your group efforts. Every group member must
+implement their own version of automatic emergency braking as a ROS
+node. For a group of three students alice, bob, and charley, their
+nodes would be:
+
+    ${HOME}/sim_ws/src/
+	   |
+	   +-- alice_safety_node/
+	   |
+	   +-- bob_safety_node/
+	   |
+	   +-- charley_safety_node/
+	   
+The launch file must accept a command line parameter to select which
+safety node to run. The remaining instructions use `safety_node` as a
+placeholder for the individual implemenatations.
+
+
 #### The `LaserScan` Message
 
 [LaserScan](http://docs.ros.org/en/noetic/api/sensor_msgs/html/msg/LaserScan.html)
@@ -153,20 +171,20 @@ edit `docker-compose.yml` in the `f1tenth_gym_ros` container.
     build: ./
     volumes:
       - .:/sim_ws/src/f1tenth_gym_ros                             # this should have been modified already
-      - <abspath>/sim_ws/src/safety_node:/sim_ws/src/safety_node  # Add this line
+      - <abspath>/sim_ws/src/safety_node:/sim_ws/src/safety_node  # Add this line for each node
     environment:
 <<< SNIP >>>
 ```
-
 
 Note that if you're using Windows, make sure your files have Unix
 style line endings. You can use `dos2unix` or have correct settings in
 your text editor.
 
+
 **Deliverable 1**: After you're finished, update the entire skeleton
-package directory with your `safety_node` package and directly commit
-and push to the repo Github classroom created for you. Your commited
-code should start and run in simulation smoothly.
+package directory with your `safety_node` package. When all group
+members have completed their implementations, select one group member
+as the leader and create a new branch for the group's submission.
 
 *xxx-ct: Breanna, _update_ is unclear, please explain what it means to
 update and run the submission. Again, the exact commands would be most
@@ -181,6 +199,11 @@ positives. i.e. The car doesn't suddenly stop while travelling down
 the hallway. Then show the car driving towards a wall and braking
 correctly. Upload your video to YouTube (unlisted) and include a link
 to the video in **`SUBMISSION.md`**.
+
+*xxx-ct: Breanna, decide if you want the individual group members to
+do this or if you would like to evaluate their implementation as a
+group. Then decide how you would like to do the in class evaluation,
+updating the rubric below*
 
 ## 6. Grading Rubric
 - Compilation: **30** Points
