@@ -1,4 +1,4 @@
-# Lab 2: Automatic Emergency Braking
+# Lab 3: Automatic Emergency Braking
 
 ## 1. Learning Goals
 
@@ -153,14 +153,14 @@ directory created in the previous lab.
 # On the localhost
 gordon@f1sim:~$ mkdir git
 gordon@f1sim:~$ cd git/
-gordon@f1sim:~/git$ git clone https://github.com/ctessler/f1tenth_lab2_template
+gordon@f1sim:~/git$ git clone git@github.com:unlv-f1/lab3.git
 ```
 
 Copy the skeleton into the same directory containing the gym workspace.
 ```bash
 # On the localhost
 gordon@f1sim:~$ cd sim_ws/src/
-gordon@f1sim:~sim_ws/src/$ cp -r ~/git/f1tenth_lab2_template/safety_node .
+gordon@f1sim:~sim_ws/src/$ cp -r ~/git/lab3/safety_node .
 gordon@f1sim:~sim_ws/src/$ ls
 f1tenth_gym_ros safety_node
 ```
